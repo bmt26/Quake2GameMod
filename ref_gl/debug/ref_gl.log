@@ -1,0 +1,107 @@
+﻿Build started 4/29/2021 2:13:14 PM.
+     1>Project "C:\Users\Brian Temple\Quake2GameMod\ref_gl\ref_gl.vcxproj" on node 5 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _DEBUG /D WIN32 /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _WINDLL /Gm /EHsc /MTd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\debug\\" /Fd".\debug\vc120.pdb" /FR".\debug\\" /Gd /TC /analyze- /errorReport:prompt gl_draw.c gl_image.c gl_light.c gl_mesh.c gl_model.c gl_rmain.c gl_rmisc.c gl_rsurf.c gl_warp.c ..\win32\glw_imp.c ..\game\q_shared.c ..\win32\q_shwin.c ..\win32\qgl_win.c
+         qgl_win.c
+     1>c:\users\brian temple\quake2gamemod\win32\qgl_win.c(3039): warning C4996: 'putenv': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _putenv. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(941) : see declaration of 'putenv'
+     1>c:\users\brian temple\quake2gamemod\win32\qgl_win.c(3041): warning C4996: 'putenv': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _putenv. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(941) : see declaration of 'putenv'
+     1>c:\users\brian temple\quake2gamemod\win32\qgl_win.c(3436): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.inl(112) : see declaration of 'localtime'
+     1>c:\users\brian temple\quake2gamemod\win32\qgl_win.c(3438): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.h(174) : see declaration of 'asctime'
+     1>c:\users\brian temple\quake2gamemod\win32\qgl_win.c(3441): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\users\brian temple\quake2gamemod\win32\qgl_win.c(3443): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\time.h(174) : see declaration of 'asctime'
+         q_shwin.c
+         q_shared.c
+     1>c:\users\brian temple\quake2gamemod\game\q_shared.c(876): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>c:\users\brian temple\quake2gamemod\game\q_shared.c(897): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>c:\users\brian temple\quake2gamemod\game\q_shared.c(923): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(118) : see declaration of 'strcat'
+     1>c:\users\brian temple\quake2gamemod\game\q_shared.c(1056): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>c:\users\brian temple\quake2gamemod\game\q_shared.c(1230): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>c:\users\brian temple\quake2gamemod\game\q_shared.c(1234): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+     1>c:\users\brian temple\quake2gamemod\game\q_shared.c(1334): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+         glw_imp.c
+     1>c:\users\brian temple\quake2gamemod\win32\glw_imp.c(51): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\brian temple\quake2gamemod\win32\glw_imp.c(52): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strlwr. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(254) : see declaration of 'strlwr'
+     1>c:\users\brian temple\quake2gamemod\win32\glw_imp.c(357): warning C4996: 'GetVersionExA': was declared deprecated
+                 c:\program files (x86)\windows kits\8.1\include\um\sysinfoapi.h(433) : see declaration of 'GetVersionExA'
+     1>c:\users\brian temple\quake2gamemod\win32\glw_imp.c(594): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _stricmp. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(253) : see declaration of 'stricmp'
+         gl_warp.c
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_warp.c(631): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : see declaration of 'strncpy'
+         gl_rsurf.c
+         gl_rmisc.c
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmisc.c(115): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmisc.c(122): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmisc.c(154): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : see declaration of 'fopen'
+         gl_rmain.c
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmain.c(1162): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmain.c(1163): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strlwr. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(254) : see declaration of 'strlwr'
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmain.c(1165): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmain.c(1166): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strlwr. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(254) : see declaration of 'strlwr'
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmain.c(1419): warning C4996: 'putenv': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _putenv. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(941) : see declaration of 'putenv'
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmain.c(1421): warning C4996: 'putenv': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _putenv. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(941) : see declaration of 'putenv'
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmain.c(1651): warning C4133: '=' : incompatible types - from 'int (__cdecl *)(void *,void *)' to 'qboolean (__cdecl *)(void *,void *)'
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmain.c(1674): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmain.c(1686): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : see declaration of 'vsprintf'
+         gl_model.c
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_model.c(222): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+         gl_mesh.c
+         gl_light.c
+         gl_image.c
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_image.c(1254): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : see declaration of 'strcpy'
+         gl_draw.c
+         Generating Code...
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_image.c(1223): warning C4715: 'GL_Upload8' : not all control paths return a value
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmain.c(1341): warning C4715: 'R_Init' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\..\debug\ref_gl.dll" /INCREMENTAL:NO /NOLOGO winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\ref_gl.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\..\debug\ref_gl.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\..\debug\ref_gl.lib" /MACHINE:X86 /SAFESEH /DLL .\debug\gl_draw.obj
+         .\debug\gl_image.obj
+         .\debug\gl_light.obj
+         .\debug\gl_mesh.obj
+         .\debug\gl_model.obj
+         .\debug\gl_rmain.obj
+         .\debug\gl_rmisc.obj
+         .\debug\gl_rsurf.obj
+         .\debug\gl_warp.obj
+         .\debug\glw_imp.obj
+         .\debug\q_shared.obj
+         .\debug\q_shwin.obj
+         .\debug\qgl_win.obj
+     1>gl_draw.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+            Creating library .\..\debug\ref_gl.lib and object .\..\debug\ref_gl.exp
+         ref_gl.vcxproj -> C:\Users\Brian Temple\Quake2GameMod\ref_gl\.\..\debug\ref_gl.dll
+       BscMake:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o".\..\debug\ref_gl.bsc" .\debug\gl_draw.sbr .\debug\gl_image.sbr .\debug\gl_light.sbr .\debug\gl_mesh.sbr .\debug\gl_model.sbr .\debug\gl_rmain.sbr .\debug\gl_rmisc.sbr .\debug\gl_rsurf.sbr .\debug\gl_warp.sbr .\debug\glw_imp.sbr .\debug\q_shared.sbr .\debug\q_shwin.sbr .\debug\qgl_win.sbr
+     1>Done Building Project "C:\Users\Brian Temple\Quake2GameMod\ref_gl\ref_gl.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:07.17

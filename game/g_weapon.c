@@ -347,7 +347,67 @@ void fire_blaster (edict_t *self, vec3_t start, vec3_t dir, int damage, int spee
 	edict_t	*bolt;
 	trace_t	tr;
 
-	VectorNormalize (dir);
+	if (!hyper)
+	{
+		switch (rand() % 11) {
+			//Grenade
+		case 0:
+			fire_grenade2(self, start, dir, 150, 500, 1.75, 190, true);
+			return;
+
+			//Grenade Launcher
+		case 1:
+			fire_grenade(self, start, dir, 120, 600, 2.5, 160);
+			return;
+
+			//Rocket
+		case 2:
+			fire_rocket(self, start, dir, (100 + (int)(random() * 20.0)), 650, 120, 120);
+			return;
+
+			//Blaster
+		case 3:
+			break;
+
+			//Hyperblaster
+		case 4:
+			fire_blaster(self, start, dir, 20, 1000, EF_HYPERBLASTER, true);
+			return;
+
+			//Machinegun
+		case 5:
+			fire_bullet(self, start, dir, 8, 2, DEFAULT_BULLET_HSPREAD, DEFAULT_BULLET_VSPREAD, MOD_MACHINEGUN);
+			return;
+
+			//Chaingun
+		case 6:
+			fire_bullet(self, start, dir, 8, 2, DEFAULT_BULLET_HSPREAD, DEFAULT_BULLET_VSPREAD, MOD_CHAINGUN);
+			return;
+
+			//Shotgun
+		case 7:
+			fire_shotgun(self, start, dir, 4, 8, 500, 500, DEFAULT_SHOTGUN_COUNT, MOD_SHOTGUN);
+			return;
+
+			//Supershotgun
+		case 8:
+			fire_shotgun(self, start, dir, 6, 12, DEFAULT_SHOTGUN_HSPREAD, DEFAULT_SHOTGUN_VSPREAD, DEFAULT_SSHOTGUN_COUNT / 2, MOD_SSHOTGUN);
+			fire_shotgun(self, start, dir, 6, 12, DEFAULT_SHOTGUN_HSPREAD, DEFAULT_SHOTGUN_VSPREAD, DEFAULT_SSHOTGUN_COUNT / 2, MOD_SSHOTGUN);
+			return;
+
+			//Railgun
+		case 9:
+			fire_rail(self, start, dir, 150, 250);
+			return;
+
+			//BFG10K
+		case 10:
+			fire_bfg(self, start, dir, 500, 400, 1000);
+			return;
+		}
+	}
+
+	VectorNormalize(dir);
 
 	bolt = G_Spawn();
 	bolt->svflags = SVF_DEADMONSTER;
