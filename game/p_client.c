@@ -1674,6 +1674,11 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 			VectorCopy (pm.viewangles, client->ps.viewangles);
 		}
 
+		//ZOID
+		if (client->ctf_grapple)
+			CTFGrapplePull(client->ctf_grapple);
+		//ZOID
+
 		gi.linkentity (ent);
 
 		if (ent->movetype != MOVETYPE_NOCLIP)

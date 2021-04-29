@@ -1,5 +1,5 @@
-﻿Build started 4/29/2021 2:13:49 PM.
-     1>Project "C:\Users\Brian Temple\Quake2GameMod\ref_soft\ref_soft.vcxproj" on node 6 (Build target(s)).
+﻿Build started 4/29/2021 3:41:15 PM.
+     1>Project "C:\Users\Brian Temple\Quake2GameMod\ref_soft\ref_soft.vcxproj" on node 4 (Build target(s)).
      1>CustomBuild:
          Performing Custom Build Tools
           Assembling: C:\Users\Brian
@@ -8,24 +8,6 @@
          Copyright (C) Microsoft Corporation.  All rights reserved.
          
          Performing Custom Build Tools
-         Microsoft (R) Macro Assembler Version 12.00.21005.1
-         Copyright (C) Microsoft Corporation.  All rights reserved.
-         
-          Assembling: C:\Users\Brian
-     1>MASM : fatal error A1000: cannot open file : C:\Users\Brian
-         Performing Custom Build Tools
-         Microsoft (R) Macro Assembler Version 12.00.21005.1
-         Copyright (C) Microsoft Corporation.  All rights reserved.
-         
-          Assembling: C:\Users\Brian
-     1>MASM : fatal error A1000: cannot open file : C:\Users\Brian
-         Performing Custom Build Tools
-          Assembling: C:\Users\Brian
-     1>MASM : fatal error A1000: cannot open file : C:\Users\Brian
-         Microsoft (R) Macro Assembler Version 12.00.21005.1
-         Copyright (C) Microsoft Corporation.  All rights reserved.
-         
-         Performing Custom Build Tools
           Assembling: C:\Users\Brian
      1>MASM : fatal error A1000: cannot open file : C:\Users\Brian
          Microsoft (R) Macro Assembler Version 12.00.21005.1
@@ -50,13 +32,31 @@
           Assembling: C:\Users\Brian
      1>MASM : fatal error A1000: cannot open file : C:\Users\Brian
          Performing Custom Build Tools
+          Assembling: C:\Users\Brian
+     1>MASM : fatal error A1000: cannot open file : C:\Users\Brian
          Microsoft (R) Macro Assembler Version 12.00.21005.1
          Copyright (C) Microsoft Corporation.  All rights reserved.
          
+         Performing Custom Build Tools
           Assembling: C:\Users\Brian
      1>MASM : fatal error A1000: cannot open file : C:\Users\Brian
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Performing Custom Build Tools
+          Assembling: C:\Users\Brian
+     1>MASM : fatal error A1000: cannot open file : C:\Users\Brian
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
+         Performing Custom Build Tools
+          Assembling: C:\Users\Brian
+     1>MASM : fatal error A1000: cannot open file : C:\Users\Brian
+         Microsoft (R) Macro Assembler Version 12.00.21005.1
+         Copyright (C) Microsoft Corporation.  All rights reserved.
+         
      1>Done Building Project "C:\Users\Brian Temple\Quake2GameMod\ref_soft\ref_soft.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:00.66
+Time Elapsed 00:00:00.24
