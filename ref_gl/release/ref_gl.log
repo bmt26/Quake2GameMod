@@ -1,9 +1,136 @@
-﻿Build started 4/29/2021 3:41:15 PM.
-     1>Project "C:\Users\Brian Temple\Quake2GameMod\ref_gl\ref_gl.vcxproj" on node 3 (Build target(s)).
-     1>Link:
+﻿Build started 5/1/2021 6:23:44 PM.
+     1>Project "C:\Users\Brian Temple\Quake2GameMod\ref_gl\ref_gl.vcxproj" on node 5 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /O2 /Oy- /D NDEBUG /D WIN32 /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _WINDLL /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\release\\" /Fd".\release\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\game\q_shared.c ..\win32\glw_imp.c ..\win32\q_shwin.c ..\win32\qgl_win.c gl_draw.c gl_image.c gl_light.c gl_mesh.c gl_model.c gl_rmain.c gl_rmisc.c gl_rsurf.c gl_warp.c
+         q_shared.c
+     1>..\game\q_shared.c(266): warning C4100: 'f' : unreferenced formal parameter
+     1>..\game\q_shared.c(418): warning C4100: 'p' : unreferenced formal parameter
+     1>..\game\q_shared.c(418): warning C4100: 'emaxs' : unreferenced formal parameter
+     1>..\game\q_shared.c(418): warning C4100: 'emins' : unreferenced formal parameter
+     1>..\game\q_shared.c(876): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+     1>..\game\q_shared.c(897): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+     1>..\game\q_shared.c(923): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>..\game\q_shared.c(1056): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>..\game\q_shared.c(1112): warning C4127: conditional expression is constant
+     1>..\game\q_shared.c(1230): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>..\game\q_shared.c(1234): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+     1>..\game\q_shared.c(1264): warning C4127: conditional expression is constant
+     1>..\game\q_shared.c(1308): warning C4127: conditional expression is constant
+     1>..\game\q_shared.c(1334): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         glw_imp.c
+     1>..\win32\glw_imp.c(51): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>..\win32\glw_imp.c(51): warning C4057: 'function' : 'const char *' differs in indirection to slightly different base types from 'const GLubyte *'
+     1>..\win32\glw_imp.c(52): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strlwr. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(254) : see declaration of 'strlwr'
+     1>..\win32\glw_imp.c(75): warning C4055: 'type cast' : from data pointer 'void *' to function pointer 'WNDPROC'
+     1>..\win32\glw_imp.c(357): warning C4996: 'GetVersionExA': was declared deprecated
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\sysinfoapi.h(433) : see declaration of 'GetVersionExA'
+     1>..\win32\glw_imp.c(594): warning C4996: 'stricmp': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _stricmp. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(253) : see declaration of 'stricmp'
+         q_shwin.c
+         qgl_win.c
+     1>..\win32\qgl_win.c(3039): warning C4996: 'putenv': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _putenv. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(941) : see declaration of 'putenv'
+     1>..\win32\qgl_win.c(3041): warning C4996: 'putenv': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _putenv. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(941) : see declaration of 'putenv'
+     1>..\win32\qgl_win.c(3152): warning C4057: '=' : 'GLuint (__stdcall *)(GLsizei)' differs in indirection to slightly different base types from 'FARPROC'
+     1>..\win32\qgl_win.c(3157): warning C4057: '=' : 'GLenum (__stdcall *)(void)' differs in indirection to slightly different base types from 'FARPROC'
+     1>..\win32\qgl_win.c(3436): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl(112) : see declaration of 'localtime'
+     1>..\win32\qgl_win.c(3438): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.h(174) : see declaration of 'asctime'
+     1>..\win32\qgl_win.c(3441): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>..\win32\qgl_win.c(3443): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.h(174) : see declaration of 'asctime'
+         gl_draw.c
+         gl_image.c
+     1>gl_image.c(118): warning C4389: '!=' : signed/unsigned mismatch
+     1>gl_image.c(1254): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>gl_image.c(1446): warning C4057: 'function' : 'const GLuint *' differs in indirection to slightly different base types from 'int *'
+     1>gl_image.c(1567): warning C4057: 'function' : 'const GLuint *' differs in indirection to slightly different base types from 'int *'
+         gl_light.c
+         gl_mesh.c
+     1>gl_mesh.c(188): warning C4127: conditional expression is constant
+     1>gl_mesh.c(242): warning C4127: conditional expression is constant
+     1>gl_mesh.c(327): warning C4127: conditional expression is constant
+     1>gl_mesh.c(306): warning C4100: 'posenum' : unreferenced formal parameter
+     1>gl_mesh.c(718): warning C4210: nonstandard extension used : function given file scope
+         gl_model.c
+     1>gl_model.c(58): warning C4127: conditional expression is constant
+     1>gl_model.c(222): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         gl_rmain.c
+     1>gl_rmain.c(1067): warning C4057: 'function' : 'int *' differs in indirection to slightly different base types from 'unsigned int *'
+     1>gl_rmain.c(1078): warning C4057: 'function' : 'int *' differs in indirection to slightly different base types from 'unsigned int *'
+     1>gl_rmain.c(1089): warning C4057: 'function' : 'int *' differs in indirection to slightly different base types from 'unsigned int *'
+     1>gl_rmain.c(1153): warning C4057: '=' : 'const char *' differs in indirection to slightly different base types from 'const GLubyte *'
+     1>gl_rmain.c(1155): warning C4057: '=' : 'const char *' differs in indirection to slightly different base types from 'const GLubyte *'
+     1>gl_rmain.c(1157): warning C4057: '=' : 'const char *' differs in indirection to slightly different base types from 'const GLubyte *'
+     1>gl_rmain.c(1159): warning C4057: '=' : 'const char *' differs in indirection to slightly different base types from 'const GLubyte *'
+     1>gl_rmain.c(1162): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>gl_rmain.c(1163): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strlwr. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(254) : see declaration of 'strlwr'
+     1>gl_rmain.c(1165): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>gl_rmain.c(1166): warning C4996: 'strlwr': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strlwr. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(254) : see declaration of 'strlwr'
+     1>gl_rmain.c(1251): warning C4054: 'type cast' : from function pointer 'PROC' to data pointer 'void *'
+     1>gl_rmain.c(1251): warning C4152: nonstandard extension, function/data pointer conversion in expression
+     1>gl_rmain.c(1252): warning C4054: 'type cast' : from function pointer 'PROC' to data pointer 'void *'
+     1>gl_rmain.c(1252): warning C4152: nonstandard extension, function/data pointer conversion in expression
+     1>gl_rmain.c(1310): warning C4054: 'type cast' : from function pointer 'PROC' to data pointer 'void *'
+     1>gl_rmain.c(1310): warning C4152: nonstandard extension, function/data pointer conversion in expression
+     1>gl_rmain.c(1311): warning C4054: 'type cast' : from function pointer 'PROC' to data pointer 'void *'
+     1>gl_rmain.c(1311): warning C4152: nonstandard extension, function/data pointer conversion in expression
+     1>gl_rmain.c(1419): warning C4996: 'putenv': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _putenv. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(941) : see declaration of 'putenv'
+     1>gl_rmain.c(1421): warning C4996: 'putenv': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _putenv. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h(941) : see declaration of 'putenv'
+     1>gl_rmain.c(1651): warning C4133: '=' : incompatible types - from 'int (__cdecl *)(void *,void *)' to 'qboolean (__cdecl *)(void *,void *)'
+     1>gl_rmain.c(1674): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'vsprintf'
+     1>gl_rmain.c(1686): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : see declaration of 'vsprintf'
+         gl_rmisc.c
+     1>gl_rmisc.c(115): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>gl_rmisc.c(122): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+     1>gl_rmisc.c(154): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(211) : see declaration of 'fopen'
+         gl_rsurf.c
+     1>gl_rsurf.c(1562): warning C4100: 'm' : unreferenced formal parameter
+         gl_warp.c
+     1>gl_warp.c(631): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(195) : see declaration of 'strncpy'
+         Generating Code...
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_rmain.c(1341): warning C4715: 'R_Init' : not all control paths return a value
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_image.c(668): warning C4701: potentially uninitialized local variable 'blue' used
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_image.c(667): warning C4701: potentially uninitialized local variable 'green' used
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_image.c(666): warning C4701: potentially uninitialized local variable 'red' used
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_image.c(669): warning C4701: potentially uninitialized local variable 'alphabyte' used
+     1>c:\users\brian temple\quake2gamemod\ref_gl\gl_image.c(1223): warning C4715: 'GL_Upload8' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\..\release\ref_gl.dll" /INCREMENTAL:NO /NOLOGO winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\ref_gl.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\..\release\ref_gl.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\..\release\ref_gl.lib" /MACHINE:X86 /SAFESEH /DLL .\release\gl_draw.obj
+         .\release\gl_image.obj
+         .\release\gl_light.obj
+         .\release\gl_mesh.obj
+         .\release\gl_model.obj
+         .\release\gl_rmain.obj
+         .\release\gl_rmisc.obj
+         .\release\gl_rsurf.obj
+         .\release\gl_warp.obj
+         .\release\glw_imp.obj
+         .\release\q_shared.obj
+         .\release\q_shwin.obj
+         .\release\qgl_win.obj
+            Creating library .\..\release\ref_gl.lib and object .\..\release\ref_gl.exp
          ref_gl.vcxproj -> C:\Users\Brian Temple\Quake2GameMod\ref_gl\.\..\release\ref_gl.dll
      1>Done Building Project "C:\Users\Brian Temple\Quake2GameMod\ref_gl\ref_gl.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.20
+Time Elapsed 00:00:04.82

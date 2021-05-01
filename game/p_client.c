@@ -1679,6 +1679,19 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 			CTFGrapplePull(client->ctf_grapple);
 		//ZOID
 
+		//ZOID
+		if (client->ctf_rapple)
+			CTFRapplePull(client->ctf_rapple);
+		//ZOID
+
+		//ZOID
+		if (client->hoverpack)
+			Hover(client->hoverpack);
+		//ZOID
+
+		if (client->stamina <= 200 && ent->groundentity)
+			client->stamina++;
+
 		gi.linkentity (ent);
 
 		if (ent->movetype != MOVETYPE_NOCLIP)

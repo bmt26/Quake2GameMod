@@ -957,10 +957,16 @@ struct gclient_s
 
 	float		respawn_time;		// can respawn when time > this
 
-
 	void		*ctf_grapple;		// entity of grapple
 	int			ctf_grapplestate;		// true if pulling
 	float		ctf_grapplereleasetime;	// time of grapple release
+
+	void		*ctf_rapple;		// entity of rapple
+	int			ctf_rapplestate;		// true if pulling
+	float		ctf_rapplereleasetime;	// time of rapple release
+
+	edict_t		*hoverpack;
+	int			stamina;
 
 	edict_t		*chase_target;		// player we are chasing
 	qboolean	update_chase;		// need to update chase info?

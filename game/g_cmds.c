@@ -899,6 +899,51 @@ void Cmd_PlayerList_f(edict_t *ent)
 	gi.cprintf(ent, PRINT_HIGH, "%s", text);
 }
 
+void Cmd_Midair_Dive_f(edict_t *ent)
+{
+	if (ent->client->stamina > 20) {
+		vec3_t		forward;
+		AngleVectors(ent->client->v_angle, forward, NULL, NULL);
+		VectorNormalize(forward);
+		forward[2] = 0;
+		VectorScale(forward, 500, forward);
+		VectorAdd(forward, ent->velocity, ent->velocity);
+		ent->client->stamina -= 20;
+	}
+}
+
+void Cmd_Ground_Pound_f(edict_t *ent)
+{
+	if (ent->client->stamina > 20) {
+		vec3_t		forward;
+		VectorSet(forward, 0, 0, 1);
+		VectorNormalize(forward);
+		VectorScale(forward, -500, forward);
+		VectorCopy(forward, ent->velocity);
+		SV_AddGravity(ent);
+		ent->client->stamina -= 20;
+		ent->client->stamina -= 20;
+	}
+}
+
+void Cmd_Jump_f(edict_t *ent)
+{
+	if (ent->groundentity) {
+		vec3_t		forward;
+		VectorSet(forward, 0, 0, 1);
+		VectorNormalize(forward);
+		VectorScale(forward, 300, forward);
+		VectorAdd(forward, ent->velocity, ent->velocity);
+	}
+	else if (!ent->client->hoverpack) {
+		if (ent->client->stamina > 20) {
+			ent->client->hoverpack = ent;
+		}
+	}
+	else {
+		ent->client->hoverpack = NULL;
+	}
+}
 
 /*
 =================
@@ -987,6 +1032,12 @@ void ClientCommand (edict_t *ent)
 		Cmd_Wave_f (ent);
 	else if (Q_stricmp(cmd, "playerlist") == 0)
 		Cmd_PlayerList_f(ent);
+	else if (Q_stricmp(cmd, "midair_dive") == 0)
+		Cmd_Midair_Dive_f(ent);
+	else if (Q_stricmp(cmd, "ground_pound") == 0)
+		Cmd_Ground_Pound_f(ent);
+	else if (Q_stricmp(cmd, "jump") == 0)
+		Cmd_Jump_f(ent);
 	else	// anything that doesn't match a command will be a chat
 		Cmd_Say_f (ent, false, true);
 }

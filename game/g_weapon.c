@@ -347,7 +347,7 @@ void fire_blaster (edict_t *self, vec3_t start, vec3_t dir, int damage, int spee
 	edict_t	*bolt;
 	trace_t	tr;
 
-	if (!hyper)
+	if (!hyper&&self->client)
 	{
 		switch (rand() % 11) {
 			//Grenade

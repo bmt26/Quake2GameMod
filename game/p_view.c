@@ -544,8 +544,11 @@ void P_FallingDamage (edict_t *ent)
 		ent->client->fall_value = 40;
 	ent->client->fall_time = level.time + FALL_TIME;
 
+	T_RadiusDamage(ent, ent, (delta-30)*1000, ent, 80, MOD_R_SPLASH);
+
 	if (delta > 30)
 	{
+
 		if (ent->health > 0)
 		{
 			if (delta >= 55)
@@ -559,8 +562,8 @@ void P_FallingDamage (edict_t *ent)
 			damage = 1;
 		VectorSet (dir, 0, 0, 1);
 
-		if (!deathmatch->value || !((int)dmflags->value & DF_NO_FALLING) )
-			T_Damage (ent, world, world, dir, ent->s.origin, vec3_origin, damage, 0, 0, MOD_FALLING);
+		//if (!deathmatch->value || !((int)dmflags->value & DF_NO_FALLING) )
+			//T_Damage (ent, world, world, dir, ent->s.origin, vec3_origin, damage, 0, 0, MOD_FALLING);
 	}
 	else
 	{

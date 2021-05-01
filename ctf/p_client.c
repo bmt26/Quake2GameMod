@@ -1619,6 +1619,11 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 			continue;	// duplicated
 		if (!other->touch)
 			continue;
+
+		int damage = 1000;
+		vec_t *dir;
+		VectorSet(dir, 0, 0, 1);
+		T_Damage(other, world, world, dir, other->s.origin, vec3_origin, damage, 0, 0, MOD_FALLING);
 		other->touch (other, ent, NULL, NULL);
 	}
 
