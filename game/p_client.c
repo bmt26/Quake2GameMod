@@ -1689,7 +1689,7 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 			Hover(client->hoverpack);
 		//ZOID
 
-		if (client->stamina <= 200 && ent->groundentity)
+		if (client->stamina < 1000 && ent->groundentity)
 			client->stamina++;
 
 		gi.linkentity (ent);

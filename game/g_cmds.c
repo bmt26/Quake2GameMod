@@ -901,28 +901,31 @@ void Cmd_PlayerList_f(edict_t *ent)
 
 void Cmd_Midair_Dive_f(edict_t *ent)
 {
-	if (ent->client->stamina > 20) {
+	if (ent->client->stamina >= 200) {
 		vec3_t		forward;
 		AngleVectors(ent->client->v_angle, forward, NULL, NULL);
 		VectorNormalize(forward);
 		forward[2] = 0;
 		VectorScale(forward, 500, forward);
 		VectorAdd(forward, ent->velocity, ent->velocity);
-		ent->client->stamina -= 20;
+		ent->client->stamina -= 200;
 	}
 }
 
 void Cmd_Ground_Pound_f(edict_t *ent)
 {
-	if (ent->client->stamina > 20) {
+	if (ent->client->stamina >= 200) {
 		vec3_t		forward;
 		VectorSet(forward, 0, 0, 1);
 		VectorNormalize(forward);
 		VectorScale(forward, -500, forward);
 		VectorCopy(forward, ent->velocity);
 		SV_AddGravity(ent);
-		ent->client->stamina -= 20;
-		ent->client->stamina -= 20;
+		ent->client->stamina -= 200;
+		time_t my_time;
+		struct tm * timeinfo;
+		time(&my_time);
+		ent->client->time = localtime(&my_time);
 	}
 }
 
@@ -933,12 +936,18 @@ void Cmd_Jump_f(edict_t *ent)
 		VectorSet(forward, 0, 0, 1);
 		VectorNormalize(forward);
 		VectorScale(forward, 300, forward);
+		time_t my_time;
+		struct tm * timeinfo;
+		time(&my_time);
+		if (difftime(localtime(&my_time), ent->client->time) <2) {
+			VectorScale(forward, 2, forward);
+			ent->client->time = 0;
+		}
 		VectorAdd(forward, ent->velocity, ent->velocity);
 	}
-	else if (!ent->client->hoverpack) {
-		if (ent->client->stamina > 20) {
-			ent->client->hoverpack = ent;
-		}
+	else if (!ent->client->hoverpack && ent->client->stamina >= 200) {
+		ent->client->hoverpack = ent;
+		ent->client->stamina -= 200;
 	}
 	else {
 		ent->client->hoverpack = NULL;

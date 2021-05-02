@@ -967,6 +967,7 @@ struct gclient_s
 
 	edict_t		*hoverpack;
 	int			stamina;
+	int			time;
 
 	edict_t		*chase_target;		// player we are chasing
 	qboolean	update_chase;		// need to update chase info?

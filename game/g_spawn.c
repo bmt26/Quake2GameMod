@@ -654,11 +654,16 @@ char *single_statusbar =
 "xv	50 "
 "pic 0 "
 
+// health
+"xv	75 "
+"num 3 18"
+"xv	125 "
+
 // ammo
 "if 2 "
-"	xv	100 "
+"	xv	125 "
 "	anum "
-"	xv	150 "
+"	xv	175 "
 "	pic 2 "
 "endif "
 

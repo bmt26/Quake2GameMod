@@ -387,6 +387,11 @@ void G_SetStats (edict_t *ent)
 	ent->client->ps.stats[STAT_HEALTH] = ent->health;
 
 	//
+	// stamina
+	//
+	ent->client->ps.stats[STAT_STAMINA] = (ent->client->stamina/10);
+
+	//
 	// ammo
 	//
 	if (!ent->client->ammo_index /* || !ent->client->pers.inventory[ent->client->ammo_index] */)

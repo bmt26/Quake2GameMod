@@ -1285,7 +1285,7 @@ void CTFGrapplePull(edict_t *self)
 		}
 
 		VectorNormalize(hookdir);
-		VectorScale(hookdir, CTF_GRAPPLE_PULL_SPEED, hookdir);
+		VectorScale(hookdir, -CTF_GRAPPLE_PULL_SPEED, hookdir);
 		VectorCopy(hookdir, self->owner->velocity);
 		SV_AddGravity(self->owner);
 	}
@@ -1687,11 +1687,12 @@ void SV_AddGravity(edict_t *ent);
 
 void Hover(edict_t *self)
 {
-	if (self->groundentity) {
+	if (self->groundentity||self->client->stamina==0) {
 		self = NULL;
 		return;
 	}
-	self->velocity[2] = 0;
+	self->velocity[2] = 1;
+	self->client->stamina--;
 }
 
 // pull the player toward the rapple
