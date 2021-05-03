@@ -71,6 +71,22 @@ void CTFPlayerResetTrapple(edict_t *ent);
 void CTFTrapplePull(edict_t *self);
 void CTFResetTrapple(edict_t *self);
 
+typedef enum {
+	CTF_DRAPPLE_STATE_FLY,
+	CTF_DRAPPLE_STATE_PULL,
+	CTF_DRAPPLE_STATE_HANG
+} ctfDrapplestate_t;
+
+#define CTF_DRAPPLE_SPEED					0 // speed of drapple in flight
+#define CTF_DRAPPLE_PULL_SPEED				650	// speed player is pulled at
+#define MOD_DRAPPLE			34
+
+// GRAPPLE
+void CTFWeapon_Drapple(edict_t *ent);
+void CTFPlayerResetDrapple(edict_t *ent);
+void CTFDrapplePull(edict_t *self);
+void CTFResetDrapple(edict_t *self);
+
 static qboolean	is_quad;
 static byte		is_silenced;
 
@@ -2419,12 +2435,242 @@ void weapon_bfg_fire (edict_t *ent)
 		ent->client->pers.inventory[ent->client->ammo_index] -= 50;
 }
 
+/*------------------------------------------------------------------------*/
+/* DRAPPLE																  */
+/*------------------------------------------------------------------------*/
+
+// ent is player
+void CTFPlayerResetDrapple(edict_t *ent)
+{
+	if (ent->client && ent->client->ctf_drapple)
+		CTFResetDrapple(ent->client->ctf_drapple);
+}
+
+// self is drapple, not player
+void CTFResetDrapple(edict_t *self)
+{
+	if (self->owner->client->ctf_drapple) {
+		float volume = 1.0;
+		gclient_t *cl;
+
+		if (self->owner->client->silencer_shots)
+			volume = 0.2;
+
+		gi.sound(self->owner, CHAN_RELIABLE + CHAN_WEAPON, gi.soundindex("weapons/grapple/grreset.wav"), volume, ATTN_NORM, 0);
+		cl = self->owner->client;
+		cl->ctf_drapple = NULL;
+		cl->ctf_drapplereleasetime = level.time;
+		cl->ctf_drapplestate = CTF_DRAPPLE_STATE_FLY; // we're firing, not on hook
+		cl->ps.pmove.pm_flags &= ~PMF_NO_PREDICTION;
+		G_FreeEdict(self);
+	}
+}
+
+/*void toEnemy(edict_t *self, edict_t *other)
+{
+	int			i;
+
+	if (!other->client)
+		return;
+
+	// unlink to make sure it can't possibly interfere with KillBox
+	gi.unlinkentity(other);
+
+	VectorCopy(self->s.origin, other->s.origin);
+	VectorCopy(self->s.origin, other->s.old_origin);
+	other->s.origin[2] += 10;
+
+	// clear the velocity and hold them in place briefly
+	VectorClear(other->velocity);
+	other->client->ps.pmove.pm_time = 160 >> 3;		// hold time
+	other->client->ps.pmove.pm_flags |= PMF_TIME_TELEPORT;
+
+	// draw the teleport splash at source and on the player
+	self->owner->s.event = EV_PLAYER_TELEPORT;
+	other->s.event = EV_PLAYER_TELEPORT;
+
+	// set angles
+	for (i = 0; i<3; i++)
+		other->client->ps.pmove.delta_angles[i] = ANGLE2SHORT(self->s.angles[i] - other->client->resp.cmd_angles[i]);
+
+	VectorClear(other->s.angles);
+	VectorClear(other->client->ps.viewangles);
+	VectorClear(other->client->v_angle);
+
+	// kill anything at the destination
+	KillBox(other);
+
+	gi.linkentity(other);
+}*/
+
+void CTFDrappleTouch(edict_t *self, edict_t *other, cplane_t *plane, csurface_t *surf)
+{
+	float volume = 1.0;
+
+	if (other == self->owner)
+		return;
+
+	if (self->owner->client->ctf_drapplestate != CTF_DRAPPLE_STATE_FLY)
+		return;
+
+	if (surf && (surf->flags & SURF_SKY))
+	{
+		CTFResetDrapple(self);
+		return;
+	}
+
+	VectorCopy(vec3_origin, self->velocity);
+
+	PlayerNoise(self->owner, self->s.origin, PNOISE_IMPACT);
+
+	if (other->takedamage) {
+		//T_Damage(other, self, self->owner, self->velocity, self->s.origin, plane->normal, self->dmg, 1, 0, MOD_DRAPPLE);
+		toEnemy(self, self->owner);
+		CTFResetDrapple(self);
+		return;
+	}
+
+	CTFResetDrapple(self);
+	return;
+}
+
+void CTFFireDrapple(edict_t *self, vec3_t start, vec3_t dir, int damage, int speed, int effect)
+{
+
+	edict_t	*drapple;
+	trace_t	tr;
+
+	VectorNormalize(dir);
+
+	drapple = G_Spawn();
+	VectorCopy(start, drapple->s.origin);
+	VectorCopy(start, drapple->s.old_origin);
+	vectoangles(dir, drapple->s.angles);
+	VectorScale(dir, speed, drapple->velocity);
+	drapple->movetype = MOVETYPE_FLYMISSILE;
+	drapple->clipmask = MASK_SHOT;
+	drapple->solid = SOLID_BBOX;
+	drapple->s.effects |= effect;
+	VectorClear(drapple->mins);
+	VectorClear(drapple->maxs);
+	drapple->s.modelindex = gi.modelindex("models/objects/laser/tris.md2");
+	//	drapple->s.sound = gi.soundindex ("misc/lasfly.wav");
+	drapple->owner = self;
+	drapple->touch = CTFDrappleTouch;
+	//	drapple->nextthink = level.time + FRAMETIME;
+	//	drapple->think = CTFDrappleThink;
+	drapple->dmg = damage;
+	self->client->ctf_drapple = drapple;
+	self->client->ctf_drapplestate = CTF_DRAPPLE_STATE_FLY; // we're firing, not on hook
+	gi.linkentity(drapple);
+
+	tr = gi.trace(self->s.origin, NULL, NULL, drapple->s.origin, drapple, MASK_SHOT);
+	if (tr.fraction < 1.0)
+	{
+		VectorMA(drapple->s.origin, -10, dir, drapple->s.origin);
+		drapple->touch(drapple, tr.ent, NULL, NULL);
+	}
+}
+
+void CTFDrappleFire(edict_t *ent, vec3_t g_offset, int damage, int effect)
+{
+	vec3_t	forward, right;
+	vec3_t	start;
+	vec3_t	offset;
+	float volume = 1.0;
+
+	if (ent->client->ctf_drapplestate > CTF_DRAPPLE_STATE_FLY)
+		return; // it's already out
+
+	AngleVectors(ent->client->v_angle, forward, right, NULL);
+	//	VectorSet(offset, 24, 16, ent->viewheight-8+2);
+	VectorSet(offset, 24, 8, ent->viewheight - 8 + 2);
+	VectorAdd(offset, g_offset, offset);
+	P_ProjectSource(ent->client, ent->s.origin, offset, forward, right, start);
+
+	VectorScale(forward, -2, ent->client->kick_origin);
+	ent->client->kick_angles[0] = -1;
+
+	if (ent->client->silencer_shots)
+		volume = 0.2;
+
+	gi.sound(ent, CHAN_RELIABLE + CHAN_WEAPON, gi.soundindex("misc/lasfly.wav"), volume, ATTN_NORM, 0);
+	CTFFireDrapple(ent, start, forward, damage, CTF_DRAPPLE_SPEED, effect);
+
+
+#if 0
+	// send muzzle flash
+	gi.WriteByte(svc_muzzleflash);
+	gi.WriteShort(ent - g_edicts);
+	gi.WriteByte(MZ_BLASTER);
+	gi.multicast(ent->s.origin, MULTICAST_PVS);
+#endif
+
+	PlayerNoise(ent, start, PNOISE_WEAPON);
+}
+
+
+void CTFWeapon_Drapple_Fire(edict_t *ent)
+{
+	int		damage;
+
+	damage = 10;
+	CTFDrappleFire(ent, vec3_origin, damage, 0);
+	ent->client->ps.gunframe++;
+}
+
 void Weapon_BFG (edict_t *ent)
 {
-	static int	pause_frames[]	= {39, 45, 50, 55, 0};
+	/*static int	pause_frames[]	= {39, 45, 50, 55, 0};
 	static int	fire_frames[]	= {9, 17, 0};
 
-	Weapon_Generic (ent, 8, 32, 55, 58, pause_frames, fire_frames, weapon_bfg_fire);
+	Weapon_Generic (ent, 8, 32, 55, 58, pause_frames, fire_frames, weapon_bfg_fire);*/
+	/*static int	pause_frames[]	= {56, 0};
+	static int	fire_frames[]	= {4, 0};
+
+	Weapon_Generic (ent, 3, 18, 56, 61, pause_frames, fire_frames, weapon_railgun_fire);*/
+	static int	pause_frames[] = { 10, 18, 27, 0 };
+	static int	fire_frames[] = { 6, 0 };
+	int prevstate;
+
+	// if the the attack button is still down, stay in the firing frame
+	if ((ent->client->buttons & BUTTON_ATTACK) &&
+		ent->client->weaponstate == WEAPON_FIRING &&
+		ent->client->ctf_drapple)
+		ent->client->ps.gunframe = 9;
+
+	if (!(ent->client->buttons & BUTTON_ATTACK) &&
+		ent->client->ctf_drapple) {
+		toEnemy(ent->client->ctf_drapple, ent);
+		CTFResetDrapple(ent->client->ctf_drapple);
+		if (ent->client->weaponstate == WEAPON_FIRING)
+			ent->client->weaponstate = WEAPON_READY;
+	}
+
+
+	if (ent->client->newweapon &&
+		ent->client->ctf_drapplestate > CTF_DRAPPLE_STATE_FLY &&
+		ent->client->weaponstate == WEAPON_FIRING) {
+		// he wants to change weapons while drappled
+		ent->client->weaponstate = WEAPON_DROPPING;
+		ent->client->ps.gunframe = 32;
+	}
+
+	prevstate = ent->client->weaponstate;
+	Weapon_Generic(ent, 5, 9, 31, 36, pause_frames, fire_frames,
+		CTFWeapon_Drapple_Fire);
+
+	// if we just switched back to drapple, immediately go to fire frame
+	if (prevstate == WEAPON_ACTIVATING &&
+		ent->client->weaponstate == WEAPON_READY &&
+		ent->client->ctf_drapplestate > CTF_DRAPPLE_STATE_FLY) {
+		if (!(ent->client->buttons & BUTTON_ATTACK))
+			ent->client->ps.gunframe = 9;
+		else
+			ent->client->ps.gunframe = 5;
+		ent->client->weaponstate = WEAPON_FIRING;
+	}
+
 }
 
 

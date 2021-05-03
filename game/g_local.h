@@ -969,6 +969,10 @@ struct gclient_s
 	int			ctf_trapplestate;		// true if pulling
 	float		ctf_trapplereleasetime;	// time of trapple release
 
+	void		*ctf_drapple;		// entity of trapple
+	int			ctf_drapplestate;		// true if pulling
+	float		ctf_drapplereleasetime;	// time of trapple release
+
 	edict_t		*hoverpack;
 	int			stamina;
 	int			time;
