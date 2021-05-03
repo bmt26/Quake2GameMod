@@ -3,7 +3,7 @@
 
 ## Changes
 * Stamina Bar
-  1. There is now a stamina bar, which drains when the movement abilities are used.
+  -  There is now a stamina bar, which drains when the movement abilities are used.
 * 5 Movement Abilities
   1. 	Dash: Allows the player to propel themselves forward at great speeds. Default binded to v
   1.	Ground Pound: Allows the player to cancel all velocity and fall at great speeds. Default binded to ctrl
@@ -11,7 +11,8 @@
   1.	Super Jump: Enables the player to store one charge by ground pounding. Using the charge will cause the player to jump twice as high as normal. Default binded to space after ground pound
   1.	Glider: Enables the player to travel in the direction they are looking, both vertically and horizontally. Default binded to f
 * 5 Movement Gadgets
-* 
+* Player Impact Causes Damage
+  -  Falling into an enemy at great speeds will now deal damage to them
  
  ### GUI Changes
  There is a new value on the HUD which displays the current amount of stamina.
