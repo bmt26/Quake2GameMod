@@ -1,29 +1,17 @@
+# Quake2GameMod
+## This is a Mod for Quake 2 to turn it into a 3D platformer. To play this game, you need to download the Mod folder from this directory and paste it into your Quake 2 folder
 
-This is the complete source code for Quake 2, version 3.19, buildable with
-visual C++ 6.0.  The linux version should be buildable, but we haven't
-tested it for the release.
-
-The code is all licensed under the terms of the GPL (gnu public license).  
-You should read the entire license, but the gist of it is that you can do 
-anything you want with the code, including sell your new version.  The catch 
-is that if you distribute new binary versions, you are required to make the 
-entire source code available for free to everyone.
-
-The primary intent of this release is for entertainment and educational 
-purposes, but the GPL does allow commercial exploitation if you obey the 
-full license.  If you want to do something commercial and you just can't bear 
-to have your source changes released, we could still negotiate a separate 
-license agreement (for $$$), but I would encourage you to just live with the 
-GPL.
-
-All of the Q2 data files remain copyrighted and licensed under the 
-original terms, so you cannot redistribute data from the original game, but if 
-you do a true total conversion, you can create a standalone game based on 
-this code.
-
-Thanks to Robert Duffy for doing the grunt work of building this release.
-
-John Carmack
-Id Software
-
+## Changes
+* Stamina Bar
+  1. There is now a stamina bar, which drains when the movement abilities are used.
+* 5 Movement Abilities
+  1. 	Dash: Allows the player to propel themselves forward at great speeds. Default binded to v
+	1.  Ground Pound: Allows the player to cancel all velocity and fall at great speeds. Default binded to ctrl
+	1.  Hover: Allows the player to maintain the same height for a short period of time. Default binded to space while midair
+	1.  Super Jump: Enables the player to store one charge by ground pounding. Using the charge will cause the player to jump twice as high as normal. Default binded to space after ground pound
+	1.  Glider: Enables the player to travel in the direction they are looking, both vertically and horizontally. Default binded to f
+* 5 Movement Gadgets
+ 
+ ### GUI Changes
+ There is a new value on the HUD which displays the current amount of stamina.
 
