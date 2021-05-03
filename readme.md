@@ -13,6 +13,7 @@
 * 5 Movement Gadgets
   1.  The machinegun no longer shoots bullets, instead shooting a grapple that, when attached to a wall, will push the player away from that grapple.
   1.  The chaingun no longer shoots bullets, instead shooting a grapple that, when attached to a wall, will allow the player to swing around that grapple.
+  1.  The railgun no longer shoots bullets, instead shooting a grapple that, when attached to an enemy, will teleport the player into the enemy.
   1.  The shotgun acts the same in all ways except, when firing, it pushes the player in the direction opposite that the fired.
 * Player Impact Causes Damage
   -  Falling into an enemy at great speeds will now deal damage to them
