@@ -1695,6 +1695,22 @@ void Hover(edict_t *self)
 	self->client->stamina--;
 }
 
+void Glide(edict_t *self)
+{
+	if (self->groundentity || self->client->stamina < 5) {
+		self->client->canglide = NULL;
+		return;
+	}
+	self->client->stamina-=5;
+
+	vec3_t forward;
+	AngleVectors(self->client->v_angle, forward, NULL, NULL);
+	VectorNormalize(forward);
+	VectorScale(forward, 6, forward);
+	forward[2] += 8;
+	VectorAdd(forward, self->velocity, self->velocity);
+}
+
 // pull the player toward the rapple
 void CTFRapplePull(edict_t *self)
 {

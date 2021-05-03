@@ -1689,8 +1689,15 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 			Hover(client->hoverpack);
 		//ZOID
 
+		//ZOID
+		if (client->canglide)
+			Glide(client->canglide);
+		//ZOID
+
+		//ZOID
 		if (client->stamina < 1000 && ent->groundentity)
-			client->stamina++;
+			client->stamina+=2;
+		//ZOID
 
 		gi.linkentity (ent);
 

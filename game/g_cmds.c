@@ -954,6 +954,16 @@ void Cmd_Jump_f(edict_t *ent)
 	}
 }
 
+void Cmd_Glider_f(edict_t *ent)
+{
+	if (!ent->groundentity) {
+		ent->client->canglide = ent;
+	}
+	else {
+		ent->client->canglide = NULL;
+	}
+}
+
 /*
 =================
 ClientCommand
@@ -1046,7 +1056,9 @@ void ClientCommand (edict_t *ent)
 	else if (Q_stricmp(cmd, "ground_pound") == 0)
 		Cmd_Ground_Pound_f(ent);
 	else if (Q_stricmp(cmd, "jump") == 0)
-		Cmd_Jump_f(ent);
+		Cmd_Jump_f(ent); 
+	else if (Q_stricmp(cmd, "glider") == 0)
+		Cmd_Glider_f(ent);
 	else	// anything that doesn't match a command will be a chat
 		Cmd_Say_f (ent, false, true);
 }
