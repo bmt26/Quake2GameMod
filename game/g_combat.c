@@ -91,6 +91,10 @@ Killed
 */
 void Killed (edict_t *targ, edict_t *inflictor, edict_t *attacker, int damage, vec3_t point)
 {
+	vec3_t	v;
+	float	realcount;
+	static	vec3_t	time_color = { 1.0, 0.0, 1.0 };
+
 	if (targ->health < -999)
 		targ->health = -999;
 
@@ -122,6 +126,15 @@ void Killed (edict_t *targ, edict_t *inflictor, edict_t *attacker, int damage, v
 		monster_death_use (targ);
 	}
 
+	if (attacker->client) {
+		realcount = 20;
+		VectorClear(v);
+		attacker->client->damage_alpha = 0.6;
+		VectorMA(v, (float)20 / realcount, time_color, v);
+		VectorCopy(v, attacker->client->damage_blend);
+		
+
+	}
 	targ->die (targ, inflictor, attacker, damage, point);
 }
 

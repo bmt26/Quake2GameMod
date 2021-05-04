@@ -1,5 +1,5 @@
-﻿Build started 5/1/2021 6:23:44 PM.
-     1>Project "C:\Users\Brian Temple\Quake2GameMod\ref_gl\ref_gl.vcxproj" on node 5 (Build target(s)).
+﻿Build started 5/3/2021 7:39:56 PM.
+     1>Project "C:\Users\Brian Temple\Quake2GameMod\ref_gl\ref_gl.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /O2 /Oy- /D NDEBUG /D WIN32 /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _WINDLL /GF /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\release\\" /Fd".\release\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\game\q_shared.c ..\win32\glw_imp.c ..\win32\q_shwin.c ..\win32\qgl_win.c gl_draw.c gl_image.c gl_light.c gl_mesh.c gl_model.c gl_rmain.c gl_rmisc.c gl_rsurf.c gl_warp.c
          q_shared.c
@@ -133,4 +133,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.82
+Time Elapsed 00:00:03.53
