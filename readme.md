@@ -19,7 +19,7 @@
 * Player Impact Causes Damage
   -  Falling into an enemy at great speeds will now deal damage to them
 * Time Slowing Mechanics
-  -  
+  -  Various parts of the game are slowed down to 20% the normal speed for 3 real world seconds when the player kills an enemy.
  
  ### GUI Changes
  - There is a new value on the HUD which displays the current amount of stamina.
