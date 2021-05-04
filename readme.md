@@ -23,4 +23,5 @@
  
  ### GUI Changes
  - There is a new value on the HUD which displays the current amount of stamina.
+ - There is a visual effect to indicate the activation of the time slowing mechanics
 
