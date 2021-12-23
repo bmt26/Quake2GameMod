@@ -1,5 +1,6 @@
 # Quake2GameMod
-## This is a Mod for Quake 2 to turn it into a 3D platformer. To play this game, you need to download the Mod folder from this directory and paste it into your Quake 2 folder
+## Overview
+This is a Mod for Quake 2 to turn it into a 3D platformer. To play this game, you need to download the Mod folder from this directory and paste it into your Quake 2 folder
 
 ## Changes
 * Stamina Bar
