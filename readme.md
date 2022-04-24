@@ -26,3 +26,5 @@ This is a Mod for Quake 2 to turn it into a 3D platformer. To play this game, yo
  - There is a new value on the HUD which displays the current amount of stamina.
  - There is a visual effect to indicate the activation of the time slowing mechanics
 
+### Mod Walkthough GIF
+<img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
