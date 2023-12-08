@@ -1,6 +1,6 @@
 # Quake2GameMod
 ## Overview
-This is a Mod for Quake 2 to turn it into a 3D platformer. To play this game, you need to download the Mod folder from this directory and paste it into your Quake 2 folder
+Quake2GameMod is a mod that adds 3D platformer aspects to the game Quake 2. The newly implemented movement abilities are dash, ground pound, hover, super jump, and glide. Newly implemented traversal gadgets are implemented too: the grappling hook, reverse grappling hook, teleporter gun, recall device, and recoil gun. To play this game, you need to download the Mod folder from this directory and paste it into your Quake 2 folder
 
 ## Changes
 * Stamina Bar
